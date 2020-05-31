@@ -7,7 +7,6 @@ import {
 
 //gerenciar somente os links para que a pagina nao recarregue cada vez que é clicado
 import { Link } from 'react-router-dom';
-//paramos aos 36:15
 
 //Componentes iniciam com letra maiuscula
 const Header = () => {
@@ -19,12 +18,12 @@ const Header = () => {
   }
   return (
   <Navbar color='light' light expand='md'>
-    <NavbarBrand>Minhas Séries</NavbarBrand>
+    <NavbarBrand tag={Link} to='/'>Minhas Séries</NavbarBrand>
     <NavbarToggler onClick={toggle}/>
     <Collapse isOpen={open} navbar>
       <Nav className='ml-auto' navbar>
         <NavItem>
-          <NavLink href='/'>Gêneros</NavLink>
+          <NavLink tag={Link} to='/generos'>Gêneros</NavLink>
         </NavItem>
       </Nav>
     </Collapse>

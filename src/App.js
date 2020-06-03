@@ -17,8 +17,11 @@ import {
 
 //fake routes para testes
 const Home = () => {
-  return <h1>Home</h1>
-};
+  return (  
+  <div className='container'>
+    <h1>Minhas Séries - Home</h1>
+  </div>
+)};
 
 
 function App() {

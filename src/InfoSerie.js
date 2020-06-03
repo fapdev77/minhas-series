@@ -8,7 +8,7 @@ const InfoSerie = ({ match }) => {
     name:''
   });
   const [success,setSuccess] = useState(false);
-  const [mode,setMode] = useState('EDIT');
+  const [mode,setMode] = useState('INFO');
   const [genres,setGenres] = useState([]);
   const [genreId,setGenreId] = useState('');
 
@@ -106,8 +106,7 @@ const InfoSerie = ({ match }) => {
         mode === 'EDIT' &&
 
         <div className='container'>
-          <h1>Nova Série</h1>
-          <pre>{JSON.stringify(form)}</pre>
+          <h1>Info Série</h1>
           <form>
             <div className='form-group'>
               <label htmlFor='name'>Nome </label>
@@ -143,7 +142,7 @@ const InfoSerie = ({ match }) => {
                 </label>
               </div>
               <div className='form-check'>
-                <input className='form-check-imput' type='radio' name='status' checked={form.status === 'NA0_ASSISTIDO'} id='naoAssistido' value='NAO_ASSISTIDO' onChange={seleciona('NAO_ASSISTIDO')} />
+                <input className='form-check-imput' type='radio' name='status' checked={form.status === 'NAO_ASSISTIDO'} id='naoAssistido' value='NAO_ASSISTIDO' onChange={seleciona('NAO_ASSISTIDO')} />
                 <label className='form-check-label' htmlFor='naoAssistido' >
                   Não Assistido
                 </label>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import {Redirect} from 'react-router-dom';
 
-const NovoGenero = () => {
+const NovaSerie = () => {
   const [name,setName] = useState('');
   const [success,setSuccess] = useState(false);
 
@@ -11,7 +11,7 @@ const NovoGenero = () => {
   }
 
   const save = () => {
-    axios.post('/api/genres',{
+    axios.post('/api/series',{
       name:name
     }).then(res => {
       console.log(res);
@@ -20,12 +20,12 @@ const NovoGenero = () => {
   }
 
   if (success) {
-    return <Redirect to='/generos' />
+    return <Redirect to='/series' />
   }
 
   return (
     <div className='container'>
-      <h1>Novo Gênero</h1>
+      <h1>Nova Série</h1>
       <form>
         <div className='form-group'>
           <label htmlFor='name'>Nome </label>
@@ -33,7 +33,7 @@ const NovoGenero = () => {
             type='text' 
             className='form-control' 
             id='name' 
-            placeholder='Nome do Gênero'
+            placeholder='Nome da Série'
             value={name}
             onChange={onChange}
           />
@@ -44,4 +44,4 @@ const NovoGenero = () => {
   );
 }
 
-export default NovoGenero;
+export default NovaSerie;

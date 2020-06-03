@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "minhas-series-server": "https://github.com/fapdev77/minhas-series-server.git",
+    "npm-run-all": "^4.1.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
@@ -16,7 +17,9 @@
     "reactstrap": "^8.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start":"npm-run-all build start-server",
+    "start-react": "react-scripts start",
+    "start-server": "node ./node_modules/minhas-series-server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -36,5 +39,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy" : "http://localhost:3002/"
+  "proxy": "http://localhost:3002/"
 }
